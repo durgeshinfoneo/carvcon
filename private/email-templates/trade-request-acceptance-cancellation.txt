@@ -1,0 +1,9 @@
+Hi User!!!
+
+The trade request acceptance is cancelled by {{cancelledBy}}.
+
+Reason: {{reasonCancel}}
+
+Please check this link: {{tradeRequestLink}}
+
+Thanks

@@ -1,0 +1,51 @@
+version: '2'
+
+volumes:
+  mongo_data: {}
+  mongo_backup: {}
+  node_media: {}
+
+services:
+  node:
+    restart: always
+    build:
+      context: .
+      dockerfile: ./compose/node/Dockerfile_dev
+      args:
+        - NODE_VERSION=8.9.3
+        - INSTALL_PHANTOMJS=false
+        - INSTALL_GRAPHICSMAGICK=false
+        - INSTALL_MONGO=false
+        - TOOL_NODE_FLAGS=--max-old-space-size=3072
+    # command: bash 
+    volumes:
+      - /root/carvcon/models:/opt/meteor/dist/bundle/programs/web.browser/app/models
+      # - node_media:/opt/meteor/dist/bundle/programs/server
+    environment:
+      - MONGO_URL=mongodb://mongo:27017/meteor
+      - ROOT_URL=https://carvcon.com
+      - NODE_VERSION='8.9.3'
+      - METEOR_SETTINGS
+      - NODE_ENV=production
+    ports:
+      - '3000:3000'
+    depends_on:
+      - mongo
+    # tty: true
+  mongo:
+    restart: always
+    image: mongo:3
+    command: mongod --smallfiles --storageEngine=wiredTiger
+    volumes:
+      - mongo_data:/data/db
+      - mongo_backup:/backups
+  nginx:
+    restart: always
+    build: ./compose/nginx
+    volumes_from:
+      - node
+    depends_on:
+      - node
+    ports:
+      - '0.0.0.0:80:80'
+      - '0.0.0.0:443:443'

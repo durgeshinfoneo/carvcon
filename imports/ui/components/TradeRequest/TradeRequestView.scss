@@ -1,0 +1,48 @@
+@import '../../stylesheets/colors';
+
+.trade-request-view {
+  label {
+    opacity: 0.54;
+    font-size: 12px;
+    text-transform: uppercase;
+    text-align: left;
+    color: $gray-dark;
+    font-weight: bold;
+  }
+  .question {
+    font-weight: bold;
+    font-size: 16px;
+    color: #43484d;
+    padding: 5px 0 20px 0;
+    // border-top: 1px solid #f0f3f7;
+  }
+
+  hr {
+    border-top: 1px solid #f0f3f7;
+    width: 100%;
+    // margin-top: 0;
+    // margin-bottom: 0;
+  }
+
+  .btn-danger {
+    margin-bottom: 30px;
+    margin-top: 10px;
+    background-color: #ff2d55;
+    border-color: #ff2d55;
+    height: 50px;
+    text-transform: uppercase;
+
+    &:hover {
+      background-color: #ff2d55;
+      border-color: #ff2d55;
+    }
+  }
+
+  p.status-title {
+    height: 35px;
+    line-height: 35px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+  }
+}
+

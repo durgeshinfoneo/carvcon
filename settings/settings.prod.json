@@ -1,0 +1,17 @@
+{
+  "public": {
+    "CUSTOM_SEARCH_GOOGLE_API_KEY": "AIzaSyBzi8Etn9FVFMExVtHz6RgQM7SYT-bc1HQ",
+    "SEACH_ENGINE_ID": "015960322910268609103:yzakjevdzkw"
+  },
+  "facebook": {
+    "appId": "217613988979911",
+    "secret": "585d03c3ba7a88e09c9d00f595c0b578"
+  },
+  "MAIL_URL": "smtp://SMTP_Injection:c8cbb16798cf8645efff7a8b90cfa479f0b5e858@smtp.sparkpostmail.com:587",
+  "fbmessenger": {
+    "appSecret": "8f7613c02656d5b82390d4ed47458fb2",
+    "pageAccessToken": "EAADHQuOGkLwBAHOXKOuDyQZBkGPHuFDUrQAWf0NJO4p1AwFxFtl1tJjuamPBKgDeqNtpYGZBCo3IIZBuc4KISJncnXwFra2e4UIi68g3fD5pdw460vz1olzJ5Tymblf6sKlY7TK4EJdrZBi22SkBaljXbd4lIhsYr8S2btGINwZDZD",
+    "validationToken": "TOKEN",
+    "serverURL": "https://carvcon.localtunnel.me"
+  }
+}

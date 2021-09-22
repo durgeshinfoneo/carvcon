@@ -1,0 +1,35 @@
+version: '2'
+
+volumes:
+  mongo_data: {}
+
+services:
+  node:
+    # restart: always
+    build:
+      context: .
+      # args:
+      #   - INSTALL_MONGO=false
+      #   - INSTALL_GRAPHICSMAGICK=false
+      #   - INSTALL_PHANTOMJS=false
+      #   - NODE_VERSION=8.11.2
+      dockerfile: ./compose/node/Dockerfile_dev_bk
+    # command: nodemon -L --inspect=0.0.0.0:5858
+    command: meteor run --settings settings/settings.json
+    ports:
+      - '3000:3000'
+      - "5858:5858"
+    environment:
+      MONGO_URL: mongodb://mongo:27017/meteor
+    volumes:
+      - .:/home/node/carvcon
+      - /home/node/carvcon/node_modules
+    depends_on:
+      - mongo
+  mongo:
+    image: mongo:3
+    command: mongod --storageEngine=wiredTiger
+    volumes:
+      - mongo_data:/data/db
+    ports:
+      - '0.0.0.0:27017:27017'

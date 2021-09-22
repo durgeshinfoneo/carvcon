@@ -1,0 +1,7 @@
+Hi!
+
+The trade request ID {{tradeRequestId}} is accepted by {{ acceptedBy }}
+
+Please check this link: {{tradeRequestLink}}
+
+Thanks

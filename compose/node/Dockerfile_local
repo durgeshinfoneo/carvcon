@@ -1,0 +1,5 @@
+# FROM abernix/meteord:node-8.9.3-devbuild
+FROM jshimko/meteor-launchpad:devbuild
+RUN npm install -g nodemon
+RUN ln -sf /opt/nodejs/bin/nodemon /usr/bin/nodemon
+CMD ["nodemon", "-e", "yaml,js", "main.js"]

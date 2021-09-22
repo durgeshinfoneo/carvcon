@@ -1,0 +1,5 @@
+node_modules/
+npm-debug.log
+.deploy
+test_ytdl.js_
+.idea/*

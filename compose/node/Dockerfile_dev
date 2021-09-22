@@ -1,0 +1,13 @@
+FROM jshimko/meteor-launchpad:v2.3.0-devbuild
+
+RUN mkdir $APP_BUNDLE_DIR/bundle/programs/web.browser/app/models
+# VOLUME $APP_BUNDLE_DIR/bundle/programs/web.browser/app/models
+# COPY /root/carvcon/models $APP_BUNDLE_DIR/bundle/programs/web.browser/app/models
+RUN chown -R node:node $APP_BUNDLE_DIR
+RUN cd $APP_BUNDLE_DIR/bundle/programs/web.browser/app/ && chmod -R a+x models
+# COPY ./compose/node/entrypoint.sh /entrypoint.sh
+# RUN sed -i 's/\r//' /entrypoint.sh \
+#    && chmod +x /entrypoint.sh \
+#    && chown node /entrypoint.sh
+#
+# ENTRYPOINT ["/entrypoint.sh"]

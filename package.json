@@ -1,0 +1,98 @@
+{
+  "name": "carvcon",
+  "private": true,
+  "scripts": {
+    "start": "meteor run",
+    "lint": "eslint .",
+    "pretest": "npm run lint --silent",
+    "debug": "meteor run --inspect-brk=9229"
+  },
+  "eslintConfig": {
+    "extends": "@meteorjs/eslint-config-meteor",
+    "rules": {
+      "meteor/audit-argument-checks": "off",
+      "no-console": "off",
+      "no-plusplus": "off",
+      "no-underscore-dangle": "off",
+      "import/no-unresolved": "off",
+      "react/forbid-prop-types": "off",
+      "react/prefer-stateless-function": "off"
+    }
+  },
+  "eslintIgnore": [
+    "client/lib/*",
+    "client/js/*"
+  ],
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {
+        "browsers": [
+          "last 2 versions"
+        ]
+      }
+    }
+  },
+  "dependencies": {
+    "babel-runtime": "^6.20.0",
+    "bcrypt": "^3.0.0",
+    "bootstrap": "^3.3.7",
+    "cheerio": "^1.0.0-rc.1",
+    "classnames": "^2.2.5",
+    "fast-csv": "^2.4.0",
+    "fibers": "^2.0.0",
+    "handlebars": "^4.0.11",
+    "history": "^4.6.1",
+    "iconv-lite": "^0.4.17",
+    "inspect-brk": "^0.1.2",
+    "intl": "^1.2.5",
+    "limiter": "^1.1.2",
+    "meteor-node-stubs": "^1.1.0",
+    "moment": "^2.22.0",
+    "nouislider": "^11.1.0",
+    "owl.carousel": "^2.3.4",
+    "perfect-scrollbar": "^1.3.0",
+    "query-string": "^4.3.4",
+    "react": "^15.6.2",
+    "react-addons-pure-render-mixin": "^15.5.2",
+    "react-autosuggest": "^9.3.4",
+    "react-bootstrap": "^0.32.1",
+    "react-bootstrap-sweetalert": "^4.3.1",
+    "react-bootstrap-switch": "^15.5.3",
+    "react-datetime": "^2.14.0",
+    "react-dom": "^15.6.2",
+    "react-ga": "^2.2.0",
+    "react-helmet": "^5.2.0",
+    "react-image-gallery": "^0.8.2",
+    "react-loading": "^0.1.4",
+    "react-notification-system": "^0.2.17",
+    "react-router": "^4.1.1",
+    "react-router-dom": "^4.1.1",
+    "react-select": "^1.2.1",
+    "react-stepzilla": "^4.7.2",
+    "react-tagsinput": "^3.19.0",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.1",
+    "semantic-ui-react": "^0.79.1",
+    "simpl-schema": "^1.4.2",
+    "uniforms": "^1.24.0",
+    "uniforms-bootstrap3": "^1.24.1",
+    "uniforms-semantic": "^1.24.0",
+    "validator": "^9.4.1",
+    "winston": "^2.3.1",
+    "winston-daily-rotate-file": "^1.7.0",
+    "wnumb": "^1.1.0",
+    "x-ray": "^2.3.2"
+  },
+  "devDependencies": {
+    "@meteorjs/eslint-config-meteor": "^1.0.5",
+    "autoprefixer": "^6.7.7",
+    "babel-eslint": "^7.2.3",
+    "eslint": "^4.15.0",
+    "eslint-config-airbnb": "^15.1.0",
+    "eslint-import-resolver-meteor": "^0.4.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-meteor": "^4.1.4",
+    "eslint-plugin-react": "^7.5.1"
+  }
+}

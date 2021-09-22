@@ -1,0 +1,25 @@
+const rp = require('request-promise');
+const cheerio = require('cheerio');
+
+const options = {
+  method: 'GET',
+  uri: 'https://car.price.com.hk/product/list',
+  headers: {
+    'User-Agent': 'Ubuntu Chromium/34.0.1847.116 Chrome/34.0.1847.116 Safari/537.36',
+  },
+  // proxy: PROXY_LIST[parent.numberProxy],
+  transform (body) {
+    return cheerio.load(body);
+  },
+};
+
+rp(options)
+  .then(function($) {
+    $('form[name="filterform"] .unit-filter:nth-of-type(1) .filter-options.filter-options-single .filter-option').each(function(i, elem) {
+      console.log('=======elem: ', $(elem).text());
+      console.log('=======elem: ', $(elem).val());
+    });
+  })
+  .catch(function(err) {
+    console.log('err: ', err);
+  });

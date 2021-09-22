@@ -1,0 +1,44 @@
+FROM node:8.11.2
+
+# setup user home dir
+ENV USER node
+
+RUN useradd --user-group --create-home --shell /bin/false app
+
+RUN npm install -g nodemon
+
+ENV HOME /home/$USER
+
+# install meteor (for building distribution)
+RUN curl -sL https://install.meteor.com | /bin/sh
+
+ENV PATH $PATH:$HOME/.meteor
+
+RUN mkdir $HOME/carvcon
+
+RUN chown -R $USER:$USER $HOME
+
+USER $USER
+
+COPY package.json package-lock.json $HOME/carvcon/
+
+WORKDIR $HOME/carvcon
+
+RUN meteor npm install
+
+COPY . $HOME/carvcon
+
+USER root
+
+# RUN chown -R $USER:$USER $HOME
+
+COPY ./compose/node/entrypoint.sh /entrypoint.sh
+RUN sed -i 's/\r//' /entrypoint.sh \
+    && chmod +x /entrypoint.sh \
+    && chown $USER /entrypoint.sh
+
+USER $USER
+
+ENTRYPOINT ["/entrypoint.sh"]
+CMD ["meteor", "run", "--settings", "settings/settings.json"]
+

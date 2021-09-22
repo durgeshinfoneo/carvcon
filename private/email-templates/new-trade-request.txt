@@ -1,0 +1,7 @@
+Hi Admin!!!
+
+The new trade request is submitted to carvcon.
+
+Please check this link: {{tradeRequestLink}}
+
+Thanks

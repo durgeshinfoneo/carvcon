@@ -1,0 +1,241 @@
+.car_min {
+    width: 100%;
+}
+
+.car_list {
+    width: 100%;
+    border: solid 1px #cccccc87;
+    border-radius: 5px;
+    padding: 7px;
+    box-shadow: 0 0 2px #d3d3d3ab;
+    background-color: #fff;
+}
+
+.car_list_left {
+    width: 35%;
+    float: left;
+}
+
+    .car_list_left img {
+        width: 100%;
+    }
+
+.car_list_right {
+    width: 65%;
+    float: left;
+    padding-left: 10px;
+}
+
+    .car_list_right h2 {
+        font-size: 15px;
+        color: #000;
+        margin: 0px 0 5px;
+    }
+
+    .car_list_right p {
+        font-size: 13px;
+        color: #808080;
+        line-height: 18px;
+        margin-top: 4px;
+    }
+
+.car_list_right1 {
+    width: 100%;
+}
+
+    .car_list_right1 p {
+        float: left;
+        margin: 0px;
+        line-height: 20px;
+        padding: 0 1px 0 0;
+    }
+
+        .car_list_right1 p strong {
+            font-size: 14px;
+            color: #000;
+            margin: 0;
+            padding: 0;
+        }
+
+    .car_list_right1 ul {
+        margin: 0px;
+        padding: 0px;
+        list-style: none;
+    }
+
+        .car_list_right1 ul li {
+            float: left;
+            font-size: 13px;
+            color: #000;
+            border-right: solid 1px #000;
+            padding: 0 3px;
+            line-height: 14px;
+            margin-left: 5px;
+            margin-top: 3px;
+        }
+
+.automatic {
+    font-size: 13px !important;
+    color: #000 !important;
+    margin-bottom: 3px !important;
+    width: 100% !important;
+}
+
+.border_right0 {
+    border-right: 0px !important;
+}
+
+.like_icons {
+    width: auto;
+    margin-top: 5px;
+    float: left;
+}
+
+    .like_icons a {
+        display: inline-block;
+        font-size: 13px;
+        text-decoration: none;
+        padding: 3px 17px;
+        border: #d8d8d8 solid 1px;
+        background-color: #ebebeb;
+        border-radius: 20px;
+    }
+
+        .like_icons a p {
+            float: left;
+            font-size: 14px;
+            color: #000;
+            padding-top: 4px;
+            margin: 0 0 0 7px;
+        }
+
+        .like_icons a img {
+            width: 22px;
+            float: left;
+        }
+
+
+
+.like_fbrat {
+    width: auto;
+    margin-top: 5px;
+    float: left;
+    margin-left: 10px;
+}
+
+    .like_fbrat a {
+        display: inline-block;
+        font-size: 13px;
+        text-decoration: none;
+        padding: 3px 22px;
+        border: #d8d8d8 solid 1px;
+        background-color: #ebebeb;
+        border-radius: 20px;
+    }
+
+
+        .like_fbrat a img {
+            width: 22px;
+            float: left;
+        }
+
+.car_details {
+    width: 100%;
+    border: solid 1px #cccccc87;
+    border-radius: 5px;
+    padding: 7px;
+    box-shadow: 0 0 2px #d3d3d3ab;
+    background-color: #fff;
+}
+
+.car_details_left {
+    width: 100%;
+}
+
+    .car_details_left img {
+        width: 100%;
+    }
+
+
+.car_details_right {
+    width: 100%;
+    padding-top: 10px;
+}
+
+    .car_details_right h2 {
+        font-size: 20px;
+        color: #000;
+        margin: 0px 0 12px;
+    }
+
+    .car_details_right p {
+        font-size: 14px;
+        color: #808080;
+        line-height: 23px;
+        margin-top: 4px;
+    }
+
+.car_details_right1 {
+    width: 100%;
+    margin-bottom: 11px;
+}
+
+    .car_details_right1 p {
+        float: left;
+        margin: 0px;
+        line-height: 20px;
+        padding: 0 1px 0 0;
+    }
+
+.car_details_right p strong {
+    font-size: 16px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+}
+
+.car_details_right1 ul {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+    .car_details_right1 ul li {
+        float: left;
+        font-size: 16px;
+        color: #000;
+        border-right: solid 1px #000;
+        padding: 0 3px;
+        line-height: 14px;
+        margin-left: 5px;
+        margin-top: 3px;
+    }
+
+
+
+.border_right0 {
+    border-right: 0px !important;
+}
+
+.car_details_right button {
+    padding: 7px 20px 7px;
+    font-size: 13px;
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.Status {
+    font-size: 16px !important;
+    color: #000 !important;
+}
+
+.pdg0 {
+    padding: 31px 0 0;
+}
+
+.margin_t_b {
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+}
