@@ -149,7 +149,7 @@ export default class TradeRequestForm extends Component {
       tradeRequest,
     });
   };
-
+ 
   handleSubmit = (e) => {
     e.preventDefault();
     const self = this;

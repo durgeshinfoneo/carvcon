@@ -91,6 +91,7 @@ export default class ProfileForm extends Component {
           <label htmlFor="inputFirstName" className="col-sm-2 control-label">
             <T>common.profile.first-name</T>
           </label>
+
           <div className="col-sm-10">
             <input
               name="firstName"
@@ -101,6 +102,7 @@ export default class ProfileForm extends Component {
               value={this.state.user.profile.firstName}
               onChange={this.handleInputChange}
             />
+            
           </div>
         </div>
         <div className="form-group">

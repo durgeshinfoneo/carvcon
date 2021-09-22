@@ -9,7 +9,7 @@ import SimpleSchema from 'simpl-schema';
 
 const Cars = new Mongo.Collection('cars');
 // SimpleSchema.extendOptions(['index', 'unique', 'denyInsert', 'denyUpdate']);
-
+ 
 const ImageSchema = new SimpleSchema({
   url: {
     type: String,

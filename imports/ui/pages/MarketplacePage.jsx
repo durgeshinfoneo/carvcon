@@ -8,30 +8,64 @@ import FormValidator from '../components/FormValidator';
 import './../css/marketplace.css';
 import './../css/jquery-ui.css';
 import './../js/jquery-ui.js';
-
+import TradableCars from '../../api/tradableCars/tradableCars';
+import { withTracker } from 'meteor/react-meteor-data';
 const T = i18n.createComponent();
 
-export default class MarketplacePage extends Component {
+class MarketplacePage extends Component {
   constructor(props) {
     super(props);
+    // this.state = {
+    //   error: '',
+    //   success: '',
+    //   tradableCars: this.props.tradableCars,
+    // };
   }
 
   componentDidMount() {
-  const tradableCar = {
-    carBrand:'Tata',
-    model:'Jaguar',
-    sellingPrice:'10000000',
-    cc:5000,
-    year:2019,
-    hands:2,
-    transmission:'automatic',
-    mainPhoto:'first',
-    shortDescription:'this is the short description',
-    likes:10,
-    favorite:true,
-  }
-   Meteor.call('tradable.insert',tradableCar);
 
+    // Meteor.call('tradableCars.remove','W8YCtTFPeEN2xbzuR',(err)=>{
+    //   if(err){
+    //     alert(err);
+    //   }else{
+    //     alert('successfully removed W8YCtTFPeEN2xbzuR');
+    //   }
+    // });
+    // Meteor.call('tradableCars.insert',tcdata,(err)=>{
+    //   if(err){
+    //     alert(err);
+    //   } else {
+    //    // alert('success');
+    //    console.log('saved');
+    //   }
+
+    // })  
+
+
+    // const tradableCar = {
+    //   carBrand:'Tata',
+    //   model:'Jaguar',
+    //   sellingPrice:'10000000',
+    //   cc:5000,
+    //   year:2019,
+    //   hands:2,
+    //   transmission:'automatic',
+    //   mainPhoto:'first',
+    //   shortDescription:'this is the short description',
+    //   likes:10,
+    //   favorite:true,
+    // }
+    //  Meteor.call('tradableCars.insert',tradableCar,);
+
+    // const subscription = Meteor.subscribe('listAllTradableCars');
+    //  setTimeout(()=>{
+    //   const tradableCars = TradableCars.find({}).fetch();
+    //  if(subscription.ready){
+    //  console.log('=======user=======:',tradableCars);
+    // }
+    // },1000);
+
+    //console.log('this.state',this.state.tradableCars);
     var w = window.location.href.split('?i=');
     if (w.length > 1 && w[1] == '1') {
       setTimeout(() => {
@@ -49,7 +83,7 @@ export default class MarketplacePage extends Component {
 
     $("#txtCar").autocomplete({
       source: availableTags
-    }); 
+    });
 
     $(document).on('click', 'div.link', function () {
       var ele = $(this).parent().find('ul.submenu');
@@ -74,7 +108,7 @@ export default class MarketplacePage extends Component {
               <div className="col-md-2">
                 <div className="car_brand_box">
                   <div className="car_brand">
-                    <label for="txtCar">Car Brand</label>
+                    <label htmlFor="txtCar">Car Brand</label>
 
                     <input type="text" id="txtCar" className="form-control" name="txtCar" />
 
@@ -85,7 +119,7 @@ export default class MarketplacePage extends Component {
               <div className="col-md-2">
                 <div className="car_brand_box">
                   <div className="car_brand">
-                    <label for="email_address">Model</label>
+                    <label htmlFor="email_address">Model</label>
 
                     <input type="text" id="email_address" className="form-control" name="email-address" />
 
@@ -96,7 +130,7 @@ export default class MarketplacePage extends Component {
               <div className="col-md-2">
                 <div className="car_brand_box">
                   <div className="car_brand">
-                    <label for="email_address">CC</label>
+                    <label htmlFor="email_address">CC</label>
 
                     <input type="text" id="email_address" className="form-control" name="email-address" />
 
@@ -107,7 +141,7 @@ export default class MarketplacePage extends Component {
               <div className="col-md-2">
                 <div className="car_brand_box">
                   <div className="car_brand">
-                    <label for="email_address">Year</label>
+                    <label htmlFor="email_address">Year</label>
 
                     <input type="text" id="email_address" className="form-control" name="email-address" />
 
@@ -118,7 +152,7 @@ export default class MarketplacePage extends Component {
               <div className="col-md-2">
                 <div className="car_brand_box">
                   <div className="car_brand">
-                    <label for="email_address">Others</label>
+                    <label htmlFor="email_address">Others</label>
 
                     <input type="text" id="email_address" className="form-control" name="email-address" />
 
@@ -132,7 +166,7 @@ export default class MarketplacePage extends Component {
                 <div className="col-md-4">
                   <div className="car_brand_box">
                     <div className="car_brand">
-                      <label for="email_address">New/Used</label>
+                      <label htmlFor="email_address">New/Used</label>
 
                       <select className="form-control" id="sel1">
                         <option>New</option>
@@ -147,7 +181,7 @@ export default class MarketplacePage extends Component {
                 <div className="col-md-4">
                   <div className="car_brand_box">
                     <div className="car_brand">
-                      <label for="email_address">Transmission</label>
+                      <label htmlFor="email_address">Transmission</label>
 
                       <select className="form-control" id="sel1">
                         <option>Manual</option>
@@ -162,7 +196,7 @@ export default class MarketplacePage extends Component {
                 <div className="col-md-4">
                   <div className="car_brand_box">
                     <div className="car_brand">
-                      <label for="email_address">Status</label>
+                      <label htmlFor="email_address">Status</label>
 
                       <select className="form-control" id="sel1">
                         <option>All</option>
@@ -181,7 +215,7 @@ export default class MarketplacePage extends Component {
                   <div className="col-md-7" style={{ padding: '0px' }}>
                     <div className="car_brand_box">
                       <div className="car_brand">
-                        <label for="email_address">Price</label>
+                        <label htmlFor="email_address">Price</label>
 
                         <input type="text" id="email_address" className="form-control car_brand2" name="email-address" />
                         <span className="hipen"> -</span>
@@ -803,3 +837,17 @@ export default class MarketplacePage extends Component {
     );
   }
 }
+
+export default withTracker(() => {
+  const subscription = Meteor.subscribe('listAllTradableCars');
+  // const preference = TradableCars.find({ 'model': 'Land rover'}).fetch();
+  const preference = TradableCars.find({}).fetch();
+  console.log('=======userss=======:', preference);
+  return {
+    loading: !subscription.ready(),
+    user: Meteor.user() || {},
+    isAuthenticated: Meteor.userId() !== null,
+
+    preference,
+  };
+})(MarketplacePage);

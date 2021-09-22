@@ -11,7 +11,7 @@ import UserCompanyForm from '../components/UserCompanyForm';
 import UserPreferences from '../../api/userpreferences/userpreferences';
 import UserCompanies from '../../api/usercompanies/usercompanies';
 import { ROLES } from '../../helpers/constant';
-
+import TradableCars from '../../api/tradableCars/tradableCars'; 
 const T = i18n.createComponent();
 
 class ProfilePage extends Component {
@@ -159,7 +159,7 @@ export default withTracker(() => {
   const subscription = Meteor.subscribe('users.profile');
   const company = UserCompanies.findOne({ userId: Meteor.userId() });
   const preference = UserPreferences.findOne({ userId: Meteor.userId() });
-  // console.log('=======company=======:', company);
+   console.log('=======user=======:', Meteor.user());
   return {
     loading: !subscription.ready(),
     user: Meteor.user() || {},
@@ -168,3 +168,17 @@ export default withTracker(() => {
     preference,
   };
 })(ProfilePage);
+
+// export default withTracker(() => {
+//   const subscription = Meteor.subscribe('listAllTradableCars');
+//  // const company = UserCompanies.findOne({ userId: Meteor.userId() });
+//   const preference = TradableCars.find({ }).fetch();
+//    console.log('=======user=======:', preference);
+//   return {
+//     loading: !subscription.ready(),
+//     user: Meteor.user() || {},
+//     isAuthenticated: Meteor.userId() !== null,
+   
+//     preference,
+//   };
+// })(ProfilePage);

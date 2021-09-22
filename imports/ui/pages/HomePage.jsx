@@ -8,6 +8,7 @@ import FilterForm from '../../ui/components/Home/FilterForm';
 import Header from '../../ui/components/Header/Header';
 import Footer from '../../ui/components/Footer';
 
+
 const T = i18n.createComponent();
 const $ = global.$;
 
@@ -45,8 +46,8 @@ export default class HomePage extends Component {
         },
       },
     });
-  }
 
+  }
   componentWillUnmount() {
     // this._invalidate = () => this.forceUpdate();
     i18n.offChangeLocale(this._invalidate);
@@ -456,9 +457,18 @@ export default class HomePage extends Component {
             </div>
           </div>
         </section>
-
+<p>   para</p>
         <Footer />
       </div>
     );
   }
 }
+// export default withTracker(() => {
+//   const subscription = Meteor.subscribe('listAllTradableCars');
+//   const tradableCars = TradableCars.find({}).fetch();
+//   console.log('=======user=======:',tradableCars);
+//   return {
+//     loading: !subscription.ready(),
+//     tradableCars: tradableCars || {}
+//   };
+// })(HomePage);

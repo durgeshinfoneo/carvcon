@@ -39,3 +39,7 @@ import '../../api/tradeRequestConfig/server/publications';
 
 import '../../api/files/methods';
 import '../../api/files/server/publications';
+
+import '../../api/tradableCars/methods';
+import '../../api/tradableCars/server/publications';
+
